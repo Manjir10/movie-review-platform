@@ -1,7 +1,9 @@
 import axios from 'axios';
 
+// This is the crucial change for deployment.
+// It tells the React app to use the live API URL when deployed on Vercel.
 const API = axios.create({
-  baseURL: 'http://localhost:5001/api',
+  baseURL: process.env.REACT_APP_API_URL,
 });
 
 // --- USER ROUTES ---
