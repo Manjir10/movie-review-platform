@@ -5,7 +5,7 @@ import LoginPage from './pages/LoginPage';
 import MovieDetailPage from './pages/MovieDetailPage';
 import RegisterPage from './pages/RegisterPage';
 import ProfilePage from './pages/ProfilePage';
-import AddMoviePage from './pages/AddMoviePage'; // 1. Import the new page
+import AddMoviePage from './pages/AddMoviePage';
 import { AuthContext } from './context/AuthContext';
 
 function App() {
@@ -25,7 +25,7 @@ function App() {
               </>
             ) : (
               <>
-                {/* 2. Add the "Add Movie" link */}
+                {/* --- THIS IS THE FIX --- */}
                 <Link className="nav-link text-white me-3" to="/add-movie">Add Movie</Link>
                 <Link className="nav-link text-white me-3" to="/profile">Profile</Link>
                 <button onClick={logout} className="btn btn-outline-light">Logout</button>
@@ -40,7 +40,7 @@ function App() {
           <Route path="/login" element={<LoginPage />} />
           <Route path="/register" element={<RegisterPage />} />
           <Route path="/profile" element={<ProfilePage />} />
-          <Route path="/add-movie" element={<AddMoviePage />} /> {/* 3. Add the route */}
+          <Route path="/add-movie" element={<AddMoviePage />} />
           <Route path="/movies/:id" element={<MovieDetailPage />} />
         </Routes>
       </div>
